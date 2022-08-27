@@ -33,3 +33,18 @@ Subject: Testing email
 
 This is the body
 ```
+
+## HTTP example for multipart of text+html
+
+```http
+POST /send-email HTTP/2
+Api-Key: password
+From: origin@insagenda.fr
+To: destination@example.org
+Reply-To: someone@gmail.com
+Subject: Testing email
+
+This is a text message.
+-----END-TEXT-BEGIN-HTML-----
+<p>This is a text <i>message<i>.<p>
+```

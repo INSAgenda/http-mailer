@@ -1,0 +1,35 @@
+# HTTP-Mailer
+
+A remarkably simple and lightweight HTTP API for sending emails.  
+Emails are sent through a local SMTP server at port 25 (tested with Postfix).
+
+## CLI documentation
+
+```bash
+http-mailer 0.1.0
+Mubelotix <mubelotix@gmail.com>
+
+USAGE:
+    http-mailer [OPTIONS]
+
+OPTIONS:
+    -a, --addr <ADDR>          Address to listen on [default: localhost:8000]
+    -c, --cert <CERT>          Path to ssl certicate
+    -h, --help                 Print help information
+    -k, --api-key <API_KEY>    Hashed api key (with sha256)
+    -p, --privkey <PRIVKEY>    Path to ssl private key
+    -V, --version              Print version information
+```
+
+## HTTP example
+
+```http
+POST /send-email HTTP/2
+Api-Key: password
+From: origin@insagenda.fr
+To: destination@example.org
+Reply-To: someone@gmail.com
+Subject: Testing email
+
+This is the body
+```

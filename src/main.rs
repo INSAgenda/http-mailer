@@ -119,6 +119,7 @@ fn main() {
             },
         ).expect("Failed to launch server")
     } else {
+        println!("WARNING: HTTPS is disabled");
         Server::http(cli.addr.clone()).expect("Failed to launch server")
     };
     println!("Listening on {}", cli.addr);
